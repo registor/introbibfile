@@ -1,7 +1,14 @@
 # -*- mode: gitignore; -*-
 
 # fonts folder
+./fonts/
 /fonts/*
+./fonts/*
+
+# ref folder
+./ref/
+/ref/*
+./ref/*
 
 # ======emacs editor======
 *~
