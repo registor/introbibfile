@@ -6,21 +6,93 @@
 \input{setup/format.tex}
 
 % Information
-\title[文献数据文件]{参考文献数据文件(*.bib)}
+\title[文献数据库]{\LARGE 参考文献数据库(*.bib)简单教程}
 \author[N. Geng]{耿楠}
 \institute[教发中心]{西北农林科技大学教学发展中心}
 \date{\tosemester}
 \titlegraphic{%
   \vspace{3.0cm}
-  \qrcode[hyperlink, height=1.6cm]{https://github.com/registor/install-texlive-studio}}
+  \qrcode[hyperlink, height=1.6cm]{https://github.com/registor/createbibfile}}
 
 \begin{document}
 
 \maketitle
-
-\begin{frame}[standout,plain]
-  ...
+\section[文献数据库]{参考文献数据库}
+\subsection[概述]{概述}
+\begin{frame}{文献数据库}{概述}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 文献生成基本原理
+      \begin{itemize}
+      \item \texinline{\thebibliography}环境结合\texinline{\bibitem}命
+        令实现
+        \begin{itemize}
+        \item 直接写入tex源文件
+        \item 外部程序生成
+        \end{itemize}
+      \end{itemize}
+    \item 参考文献数据库
+      \begin{itemize}
+      \item 参考文献数据源
+      \item 统一规范的\alert{文本文件}
+      \item \enquote{\alert{bib}}为后缀名
+      \end{itemize}
+    \item 分类
+      \begin{itemize}
+      \item 传统Bib\TeX 格式，后端用Bibtex程序实现，4次编译
+      \item 现代Bib\LaTeX 格式，后端用Biber程序实现，3次编译
+      \end{itemize}
+    \end{itemize}
+  \end{spacing}
 \end{frame}
+\subsection[数据库构成]{数据库构成}
+\begin{frame}[fragile]{文献数据库}{数据构成}
+  \begin{spacing}{1.0}
+    \begin{itemize}
+    \item 参考文献数据库文件(\alert{*.bib}文件)
+      \begin{itemize}
+      \item 由参考文献记录构成的\alert{文本文件}\footnote[frame,2]{细
+          节请使用texdoc bibtex和texdoc biblatex查阅相关文档。}
+        \begin{itemize}
+        \item 记录类型---Book(专著)、Article(期刊文章)等
+        \item 记录域数据(数据项)---Title(题名)、Author(作者)等
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \end{spacing}
+  \vspace{-0.8ex}
+  \begin{center}
+    \begin{minipage}[h]{0.55\linewidth}
+    \begin{textcb}{bib数据库文件格式}
+      @Article{傅刚2000--,
+        Title = {大风沙过后的思考},
+        Author = {傅刚 and 赵承 and 李佳路},
+        Date = {2000-04-12},
+        Journaltitle = {北京青年报}
+      }
+      @Book{顾炎武1982--,
+        Title = {昌平山水记},
+        Author = {顾炎武},
+        Publisher = {北京古籍出版社},
+        Year = {1982},
+        Location = {北京}
+      }
+    \end{textcb}
+    \end{minipage}
+  \end{center}
+\end{frame}
+\section[手动生成]{手动生成数据库文件}
+% \section[软件工具]{文献数据库管理软件}
+% \subsection[Zotero]{Zotero}
+% \subsection[NoteExpress]{NoteExpress}
+% \subsection[EndNote]{EndNote}
+% \section[文献数据库切片]{文献数据库切片}
+% \subsection[手动摘录]{手动摘录}
+% \subsection[自动生成]{自动生成}
+
+% \begin{frame}[standout,plain]
+%   ...
+% \end{frame}
 
 \end{document}
 
