@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{boxie}[2018/08/25 v1.0, GENG Nan nangeng@qq.com with contributions ZHANG Chennan chennanzhang@gmail.com.]
+\ProvidesPackage{boxie}[2019/05/30 v1.1, GENG Nan nangeng@qq.com with contributions ZHANG Chennan chennanzhang@gmail.com.]
 %--------------------------------------------------------------------------------
 % 使用fontawesome5符号字体
 % \RequirePackage{fontawesome}之前的两句是必须的，否则用ubuntu下用xelatex编译会出错。
@@ -20,6 +20,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{xcolor}%[dvipsnames]
 \usetikzlibrary{shapes.geometric}
+
 %------------------------------------------------------------------------------------
 % 定义颜色
 %------------------------------------------------------------------------------------
@@ -112,28 +113,26 @@
   apple/.style={%
     halign title=center,%
     skin=bicolor,%
-    right=0pt,top=0pt,bottom=0pt,
-    left=0pt,
     boxrule=0.5mm,%
-    breakable,%     
+    breakable,% 
     frame style={%
       draw=AppleGray,%
       left color=AppleGray,%
       right color=AppleGray%
     },%
     overlay unbroken = {%
-      \node[inner sep=0pt,anchor=north west,yshift=-2pt,xshift=10pt,text=white]
+      \node[inner sep=0pt,anchor=north west,yshift=-4pt,xshift=10pt,text=white]
       at (frame.north west) {\textcolor{AppleRed}{\faCircle}
         \textcolor{AppleYellow}{\faCircle}
         \textcolor{AppleGreen}{\faCircle}};
     },%
     overlay first = {%
-      \node[inner sep=0pt,anchor=north west,yshift=-2pt,xshift=10pt,text=white]
+      \node[inner sep=0pt,anchor=north west,yshift=-4pt,xshift=10pt,text=white]
       at (frame.north west) {\textcolor{AppleRed}{\faCircle}
         \textcolor{AppleYellow}{\faCircle}
         \textcolor{AppleGreen}{\faCircle}};
     },%    
-    fonttitle=\scriptsize \sffamily,%\bfseries,%
+    fonttitle=\sffamily,%\bfseries,%
     fontupper=\small\sffamily,%
     fontlower=\small\sffamily%
   },
@@ -159,8 +158,6 @@
   % win10 terminal base style
   win10/.style={%
     skin=bicolor,%
-    right=0pt,top=0pt,bottom=0pt,
-    left=0pt,
     boxrule=0.1mm,%
     %toptitle=1ex,
     sharp corners,
@@ -168,23 +165,22 @@
     colbacktitle=WinGray,%
     colframe=WinGray,%
     coltitle=black,%
-    fonttitle=\hspace{15pt}\scriptsize \sffamily,%\bfseries,
+    fonttitle=\sffamily,%\bfseries,
     fontupper=\small\sffamily,
     fontlower=\small\sffamily,
     frame style={%
       draw=WinBlue,%
       left color=WinBlue,%
-      right color=WinBlue,%
-      %right = 10pt,
+      right color=WinBlue%
     },%
     overlay unbroken = {%
-      \node[inner sep=0pt,anchor=north west,yshift=-2pt,xshift=1.2pt,text=black]
+      \node[inner sep=0pt,anchor=north west,yshift=-3pt,xshift=1.2pt,text=black]
       at (frame.north west){~\WindowsLogo};% \fbox{\faTerminal}     
       \node[inner sep=0pt,anchor=north east,yshift=-3pt,xshift=-8pt,text=black] at (frame.north
       east){\rule{0.8em}{0.6pt}\quad$\square$\quad{\Large$\times$}};    
     },%
     overlay first = {%
-      \node[inner sep=0pt,anchor=north west,yshift=-2pt,xshift=1.0pt,text=black]
+      \node[inner sep=0pt,anchor=north west,yshift=-3pt,xshift=1.0pt,text=black]
       at (frame.north west){~\WindowsLogo};%\small ~\faWindows
       \node[inner sep=0pt,anchor=north east,yshift=-3pt,xshift=-8pt,text=black] at (frame.north
       east){\rule{0.8em}{0.6pt}\quad$\square$\quad{\Large$\times$}};      
@@ -208,21 +204,19 @@
   ubuntu/.style={%
     halign title=center,%
     skin=bicolor,%
-    right=0pt,top=0pt,bottom=0pt,
-    left=0pt,
     boxrule=0.5mm,%
     breakable,% 
     overlay unbroken = {%
       \node[inner sep=0pt,anchor=north
-      east,yshift=-1pt,xshift=-5pt,text=white] at (frame.north
+      east,yshift=-3pt,xshift=-5pt,text=white] at (frame.north
       east){\UbuntuMin\UbuntuMax\UbuntuClose};%      
     },%
     overlay first = {%
       \node[inner sep=0pt,anchor=north
-      east,yshift=-1pt,xshift=-5pt,text=white] at (frame.north
+      east,yshift=-3pt,xshift=-5pt,text=white] at (frame.north
       east){\UbuntuMin\UbuntuMax\UbuntuClose};%      
     },%    
-    fonttitle=\scriptsize \sffamily,%\bfseries,%
+    fonttitle=\sffamily,%\bfseries,%
     fontupper=\small\sffamily,%
     fontlower=\small\sffamily%
   },
@@ -292,13 +286,12 @@
     breakable,%
     drop shadow,%
     colframe=blue!75!black,%
-    right=0pt,top=0pt,bottom=0pt,
-    left=0pt,
+    left=4.5mm,
     enhanced,%
     colframe=tcbcolback!60!black,%
     colback=tcbcolback!30!white,%
     colbacktitle=tcbcolback!5!yellow!10!white,%
-    fonttitle=\scriptsize\bfseries,%
+    fonttitle=\bfseries,%
     coltitle=black,%
     attach boxed title to top center={%
       yshift=-0.25mm-\tcboxedtitleheight/2,%
@@ -311,9 +304,11 @@
     varwidth boxed title*=-3cm,%
     boxed title style={%
       frame code={%
-        \path[fill=tcbcolback!30!black]([yshift=-1mm,xshift=-1mm]frame.north west)%
+        \path[fill=tcbcolback!30!black]([yshift=-1mm,xshift=-1mm]frame.north
+        west)%
         arc[start angle=0,end
-        angle=180,radius=1mm]([yshift=-1mm,xshift=1mm]frame.north east)%
+        angle=180,radius=1mm]([yshift=-1mm,xshift=1mm]frame.north
+        east)%
         arc[start angle=180,end angle=0,radius=1mm];%
         \path[left color=tcbcolback!60!black,right
         color=tcbcolback!60!black,middle
@@ -350,7 +345,7 @@
     colframe=tcbcolback!60!black,
     colback=white,
     colbacktitle=cvgray,
-    fonttitle=\scriptsize\ttfamily,
+    fonttitle=\ttfamily,
     coltitle=black,
     overlay broken = {
       \begin{tcbclipinterior}
@@ -372,7 +367,7 @@
 % minted part
 %------------------------------------------------------------------------------------
 \makeatletter
-\minted@def@optfv{highlightlinenumbercolor}%需要fvextra.sty包放在当前路径，暂不明白为什么
+\minted@def@optfv{highlightlinenumbercolor}%
 \minted@def@optfv{linenumberwidth}
 \makeatother
 
@@ -393,11 +388,11 @@
 % 第2个参数是窗口标题
 \DeclareTCBListing{macdarkc}{ m m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -416,11 +411,11 @@
 % 第2个参数是窗口标题
 \DeclareTCBListing{maclightc}{ m m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -438,11 +433,11 @@
 % 参数为窗口标题
 \DeclareTCBListing{macdark}{ m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -457,11 +452,11 @@
 % 参数为窗口标题
 \DeclareTCBListing{maclight}{ m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -478,11 +473,11 @@
 % 第3个参数是包含窗口内容的文件全路径名称(可以是相对路径)
 \newtcbinputlisting{\macdarkcfile}[3]{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -503,11 +498,11 @@
 % 第3个参数是包含窗口内容的文件全路径名称(可以是相对路径)
 \newtcbinputlisting{\maclightcfile}[3]{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -527,11 +522,11 @@
 % 第2个参数是包含窗口内容的文件全路径名称(可以是相对路径)
 \newtcbinputlisting{\macdarkfile}[2]{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -548,11 +543,11 @@
 % 第2个参数是包含窗口内容的文件全路径名称(可以是相对路径)
 \newtcbinputlisting{\maclightfile}[2]{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -572,11 +567,11 @@
 % 第2个参数是窗口标题
 \DeclareTCBListing{windarkc}{ m m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%    
@@ -595,11 +590,11 @@
 % 第2个参数是窗口标题
 \DeclareTCBListing{winlightc}{ m m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -617,11 +612,11 @@
 % 参数为窗口标题
 \DeclareTCBListing{windark}{ m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -636,11 +631,11 @@
 % 参数为窗口标题
 \DeclareTCBListing{winlight}{ m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -657,11 +652,11 @@
 % 第3个参数是包含窗口内容的文件全路径名称(可以是相对路径)
 \newtcbinputlisting{\windarkcfile}[3]{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -682,11 +677,11 @@
 % 第3个参数是包含窗口内容的文件全路径名称(可以是相对路径)
 \newtcbinputlisting{\winlightcfile}[3]{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -706,11 +701,11 @@
 % 第2个参数是包含窗口内容的文件全路径名称(可以是相对路径)
 \newtcbinputlisting{\windarkfile}[2]{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -727,11 +722,11 @@
 % 第2个参数是包含窗口内容的文件全路径名称(可以是相对路径)
 \newtcbinputlisting{\winlightfile}[2]{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -752,11 +747,11 @@
 % 第2个参数是窗口标题
 \DeclareTCBListing{ubtdarkc}{ m m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\xiaowu,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -775,11 +770,11 @@
 % 第2个参数是窗口标题
 \DeclareTCBListing{ubtlightc}{ m m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -797,11 +792,11 @@
 % 参数为窗口标题
 \DeclareTCBListing{ubtdark}{ m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\xiaowu,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -816,11 +811,11 @@
 % 参数为窗口标题
 \DeclareTCBListing{ubtlight}{ m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -837,11 +832,11 @@
 % 第3个参数是包含窗口内容的文件全路径名称(可以是相对路径)
 \newtcbinputlisting{\ubtdarkcfile}[3]{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -862,11 +857,11 @@
 % 第3个参数是包含窗口内容的文件全路径名称(可以是相对路径)
 \newtcbinputlisting{\ubtlightcfile}[3]{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -886,14 +881,14 @@
 % 第2个参数是包含窗口内容的文件全路径名称(可以是相对路径)
 \newtcbinputlisting{\ubtdarkfile}[2]{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
-    %autogobble,%
+    autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
-    %numbersep=3mm%
+    numbersep=3mm%
   },%
   listing only,%
   udark,%
@@ -907,11 +902,11 @@
 % 第2个参数是包含窗口内容的文件全路径名称(可以是相对路径)
 \newtcbinputlisting{\ubtlightfile}[2]{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     baselinestretch=0.6,%
     breaksymbolleft={},%
     numbersep=3mm%
@@ -928,11 +923,11 @@
 %=================================== 
 \DeclareTCBListing{GitExample}{ O{bash} m m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     numbersep=3mm%
   },%
   listing and comment,%
@@ -949,11 +944,11 @@
 %===================================
 \DeclareTCBListing{GitExampla}{ O{bash} m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     numbersep=3mm%
   },%
   listing only,%
@@ -973,7 +968,7 @@
     \end{tcbclipinterior}%
   },%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     highlightcolor={
       tcbcolback!30!white,
@@ -984,7 +979,7 @@
       tcbcolback!80!black
     },
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     linenos,%
     numbersep=1mm%
   },%
@@ -1001,13 +996,27 @@
 % langPyOne environment definition 
 %===================================
 \DeclareTCBListing{langPyOne}{ O{python} m }{%
+  overlay={%
+    \begin{tcbclipinterior}
+      \fill[tcbcolback!80!black] (frame.south west) rectangle
+       ([xshift=6mm]frame.north west);
+    \end{tcbclipinterior}%
+  },%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
+    highlightcolor={
+      tcbcolback!30!white,
+      tcbcolback!30!white
+    },
+    highlightlinenumbercolor={
+      tcbcolback!80!black,
+      tcbcolback!80!black
+    },
     breaklines,%
-    fontsize=\scriptsize,%
-    %linenos,%
-    %numbersep=1mm%
+    fontsize=\wuhao,%
+    linenos,%
+    numbersep=1mm%
   },%
   listing only,%
   lang,%
@@ -1034,7 +1043,7 @@
     },
     mathescape,
     breaklines,
-    fontsize=\scriptsize,
+    fontsize=\wuhao,
     linenos,
     numbersep=1mm%
   },
@@ -1067,7 +1076,7 @@
     },
     mathescape,
     breaklines,
-    fontsize=\scriptsize,
+    fontsize=\wuhao,
     linenos,
     numbersep=1mm
   },
@@ -1095,7 +1104,7 @@
     \end{tcbclipinterior}%
   },%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     highlightcolor={
       tcbcolback!30!white,
@@ -1106,7 +1115,7 @@
       tcbcolback!80!black
     },
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     linenos,%
     numbersep=1mm%
   },%
@@ -1122,11 +1131,11 @@
 %=======================================================
 \DeclareTCBInputListing{\gitfile}{ O{bash} m m }{%
   listing engine=minted,%
-  minted style=default,%
+  minted style=trac,%
   minted options={%
     autogobble,%
     breaklines,%
-    fontsize=\scriptsize,%
+    fontsize=\wuhao,%
     numbersep=3mm%
   },%
   listing only,%
@@ -1685,58 +1694,7 @@
     \end{tcbclipinterior}
   }
 }% end \langCVfile  
-
-
 \fi
-
-%-----------------------------------------------------------------------
-% 命令行盒子
-%-----------------------------------------------------------------------
-%% 白底黑字命令行
-\newenvironment{shellbox}
-{%
-  \VerbatimEnvironment
-  \begin{tcolorbox}[
-    enhanced,
-    arc=2pt,
-    boxrule=.5pt,
-    left=5pt, right=5pt, top=0pt, bottom=0pt,
-    boxsep=5pt,
-    colframe=black,
-    colback=white,
-    coltext=black,
-    title={},
-    fontupper=\linespread{1.2}
-  ]%
-    \begin{Verbatim}
-}
-{%
-    \end{Verbatim}
-  \end{tcolorbox}
-}
-
-%% 黑底白字命令行
-\newenvironment{invertedshellbox}
-{%
-  \VerbatimEnvironment
-  \begin{tcolorbox}[
-    enhanced,
-    arc=2pt,
-    boxrule=.5pt,
-    left=5pt, right=5pt, top=0pt, bottom=0pt,
-    boxsep=5pt,
-    colframe=black!70!white,
-    colback=black!70!white,
-    coltext=white,
-    title={},
-    fontupper=\linespread{1.2}
-  ]%
-    \begin{Verbatim}
-}
-{%
-    \end{Verbatim}
-  \end{tcolorbox}
-}
 
 \endinput
 %%
