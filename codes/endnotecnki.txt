@@ -1,0 +1,60 @@
+﻿@article{RN7,
+   author = {黄岚},
+   title = {可视化LaTeX编辑软件LyX在科技期刊论文排版中的应用},
+   journal = {中国科技期刊研究},
+   volume = {29},
+   number = {01},
+   pages = {37-42},
+   ISSN = {1001-7143},
+   year = {2018},
+   type = {Journal Article}
+}
+
+@article{RN9,
+   author = {龙静 and 尚婵妤 and 孙云志},
+   title = {定制科技期刊LaTeX论文模板的思路和实践},
+   journal = {中国科技期刊研究},
+   volume = {26},
+   number = {09},
+   pages = {975-980},
+   ISSN = {1001-7143},
+   year = {2015},
+   type = {Journal Article}
+}
+
+@article{RN10,
+   author = {罗振},
+   title = {中文科技期刊论文LaTeX模板的研究与实践},
+   journal = {中国科技期刊研究},
+   volume = {27},
+   number = {11},
+   pages = {1182-1187},
+   ISSN = {1001-7143},
+   year = {2016},
+   type = {Journal Article}
+}
+
+@article{RN11,
+   author = {聂俊 and 陈天莹 and 符红光},
+   title = {基于Latex的互联网数学公式搜索引擎},
+   journal = {计算机应用},
+   volume = {30},
+   number = {S2},
+   pages = {312-315},
+   ISSN = {1001-9081},
+   year = {2010},
+   type = {Journal Article}
+}
+
+@article{RN8,
+   author = {叶勇 and 刘秀华 and 叶琰 and 龙训建},
+   title = {基于LaTeX的题库管理与组卷系统设计},
+   journal = {西南师范大学学报(自然科学版)},
+   volume = {43},
+   number = {03},
+   pages = {181-186},
+   ISSN = {1000-5471},
+   year = {2018},
+   type = {Journal Article}
+}
+

@@ -51,16 +51,16 @@
     \begin{itemize}
     \item 参考文献数据库文件(\alert{*.bib}文件)
       \begin{itemize}
-      \item 由参考文献记录构成的\alert{文本文件}\footnote[frame,2]{细
+      \item 由参考文献条目构成的\alert{文本文件}\footnote[frame,2]{细
           节请使用texdoc bibtex和texdoc biblatex查阅相关文档。}
         \begin{itemize}
-        \item 记录类型---Book(专著)、Article(期刊文章)等
-        \item 记录域数据(数据项)---Title(题名)、Author(作者)等
+        \item 条目类型---Book(专著)、Article(期刊文章)等
+        \item 条目域数据(数据项)---Title(题名)、Author(作者)等
         \end{itemize}
       \end{itemize}
     \end{itemize}
   \end{spacing}
-  \vspace{-0.8ex}
+  \vspace{-2.0ex}
   \begin{center}
     \begin{minipage}[h]{0.55\linewidth}
     \begin{textcb}{bib数据库文件格式}
@@ -82,10 +82,340 @@
   \end{center}
 \end{frame}
 \section[手动生成]{手动生成数据库文件}
-% \section[软件工具]{文献数据库管理软件}
-% \subsection[Zotero]{Zotero}
-% \subsection[NoteExpress]{NoteExpress}
-% \subsection[EndNote]{EndNote}
+\begin{frame}[fragile]{手动生成}{使用记事本编辑}
+  \begin{spacing}{1.8}
+    \begin{itemize}
+    \item notepad++、gedit、vim等文本编辑器\footnote[frame,2]{Windows记事本可能会有编码/
+        换行等问题。}
+      \begin{itemize}
+      \item 需要符合Bib\TeX 格式或Bib\LaTeX 语法
+      \item 根据实际情况填写不同条目及条目域数据
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \includegraphics[height=0.42\textheight]{01bibnotepadpp}\quad
+      \includegraphics[height=0.42\textheight]{01bibgedit}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{手动生成}{使用TeXstudio编辑}
+  \begin{spacing}{1.3}
+    \begin{itemize}
+    \item \menu{参考文献}菜单\footnote[frame,2]{可先用\menu{参考文献>
+          类型}指定文献数据是Bib\TeX 或Bib\LaTeX 类型。}
+      \begin{itemize}
+      \item 插入指定类型条目
+      \item 填写各条目域数据
+      \item 条目域数据可根据需要删减
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.5\textheight]{02texstudiobibedit}
+    \end{center}
+  \end{spacing}  
+\end{frame}
+
+\begin{frame}[fragile]{手动生成}{使用JabRef编辑}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 免费开源*.bib数据库管理软件\link{http://www.jabref.org/}
+      \begin{itemize}
+      \item 生成*.bib数据库文件
+      \item 添加文献数据条目
+      \item 录入文献条目域数据
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \includegraphics[width=0.48\textwidth]{03jabref01}\quad
+      \includegraphics[width=0.48\textwidth]{03jabref02}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{手动生成}{自动获取bib条目域数据}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 避免手动编写bib数据
+      \begin{itemize}
+      \item 百度学术(百度学术---保持学习的态
+        度)\link{http://xueshu.baidu.com/}
+      \item 单击检索结果条目下的\alert{\keys{引用}}按钮
+      \item 单击\enquote{引用}中\enquote{导入链接}的\alert{\keys{BibTeX}}按钮
+      \item 拷贝数据到bib数据库文件\footnote[frame,2]{必要时，再手动补全缺
+          失域数据。}
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \begin{annotatedFigure}
+        {\includegraphics[width=0.48\textwidth]{04acdemicbaidu01}}
+        \annotatedFigureBox{0.36,0.51}{0.46,0.58}{red}
+        \annotatedFigureBox{0.44,0.015}{0.51,0.08}{blue}
+      \end{annotatedFigure}\quad
+      \begin{annotatedFigure}
+        {\includegraphics[width=0.48\textwidth]{04acdemicbaidu02}}
+        \annotatedFigureBox{0.005,0.05}{0.96,0.55}{blue}
+      \end{annotatedFigure}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{手动生成}{自动获取bib条目域数据}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 避免手动编写bib数据
+      \begin{itemize}
+      \item 必应学术(必应学术---学无止境,术有乾坤)\link{https://cn.bing.com/academic?mkt=zh-CN}
+      \item 单击结果条目下的\alert{\keys{Cite}}按钮
+      \item 单击\enquote{Cite}中\enquote{ImportLinks}的\alert{\keys{BibTeX}}按钮
+      \item 拷贝数据到bib数据库文件\footnote[frame,2]{必要时，再手动补全缺
+          失域数据。}
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \begin{annotatedFigure}
+        {\includegraphics[width=0.48\textwidth]{04acdemicbing01}}
+        \annotatedFigureBox{0.165,0.34}{0.212,0.37}{red}
+        \annotatedFigureBox{0.575,0.048}{0.622,0.082}{blue}
+      \end{annotatedFigure}\quad
+      \begin{annotatedFigure}
+        {\includegraphics[width=0.48\textwidth]{04acdemicbing02}}
+        \annotatedFigureBox{0.017,0.022}{0.995,0.73}{blue}
+      \end{annotatedFigure}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{手动生成}{自动获取bib条目域数据}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 避免手动编写bib数据
+      \begin{itemize}
+      \item Google学术
+      \item 单击结果条目下的\alert{\keys{''}}按钮
+      \item 单击\enquote{引用}中的\alert{\keys{BibTeX}}按钮
+      \item 拷贝数据到bib数据库文件\footnote[frame,2]{必要时，再手动补全缺
+          失域数据。}
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \begin{annotatedFigure}
+        {\includegraphics[width=0.48\textwidth]{04acdemicgoogle01}}
+        \annotatedFigureBox{0.25,0.52}{0.285,0.565}{red}
+        \annotatedFigureBox{0.635,0.037}{0.685,0.08}{blue}
+      \end{annotatedFigure}\quad
+      \begin{annotatedFigure}
+        {\includegraphics[width=0.48\textwidth]{04acdemicgoogle02}}
+        \annotatedFigureBox{0.031,0.022}{0.995,0.68}{blue}
+      \end{annotatedFigure}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\section[文献管理软件]{文献管理软件}
+\subsection[Zotero]{Zotero}
+\begin{frame}[fragile]{文献管理软件}{Zotero}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 免费文献管理软件\link{https://www.zotero.org/}
+      \begin{itemize}
+      \item 安装支持浏览器插件和软件
+      \item 收集文献条目\footnote[frame,2]{请参阅Zotero使用教程。}
+      \item 导出文献数据库
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \includegraphics[width=0.5\textwidth]{05zoterohomepage}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{文献管理软件}{Zotero}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item 以\alert{知网}文献检索为例
+      \begin{itemize}
+      \item 检索文献并选中文献
+      \item 单击\keys{导出/参考文献}
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \begin{annotatedFigure}
+        {\includegraphics[width=0.65\textwidth]{05zoterocnki01}}
+        \annotatedFigureBox{0.242,0.195}{0.275,0.515}{blue}
+        \annotatedFigureBox{0.315,0.565}{0.415,0.595}{red}
+      \end{annotatedFigure}      
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{文献管理软件}{Zotero}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item 以\alert{知网}文献检索为例
+      \begin{itemize}
+      \item 选中导出的参考文献
+      \item 单击地址栏后的\keys{Save to Zotero(CNKI)}按钮
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \begin{annotatedFigure}
+        {\includegraphics[width=0.9\textwidth]{05zoterocnki02}}
+        \annotatedFigureBox{0.013,0.012}{0.046,0.37}{blue}
+        \annotatedFigureBox{0.82,0.85}{0.855,0.91}{red}
+      \end{annotatedFigure}      
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{文献管理软件}{Zotero}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item 以\alert{知网}文献检索为例
+      \begin{itemize}
+      \item 通过\keys{Save to Zotero(CNKI)}按钮将文献条目导入Zotero文库
+      \item 根据需要在Zotero文库中对条目数据进行修订
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \includegraphics[width=0.53\textwidth]{05zoterocnki04}\\%\quad
+      \includegraphics[width=0.53\textwidth]{05zoterocnki05}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{文献管理软件}{Zotero}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item 以\alert{知网}文献检索为例
+      \begin{itemize}
+      \item 选中需要导出的文库条目
+      \item 右击选中的条目选择\menu{导出条目......}
+      \item 选择指定的bib数据库文件格式导出为bib数据库文件
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \includegraphics[height=0.45\textheight]{05zoterocnki09}\quad
+      \includegraphics[height=0.45\textheight]{05zoterocnki08}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{文献管理软件}{Zotero}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item 以\alert{知网}文献检索为例
+      \begin{itemize}
+      \item 根据需要对导出为bib数据库文件进行编辑
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \includegraphics[width=0.95\textwidth]{05zoterocnki10}
+    \end{center}
+  \end{spacing}
+\end{frame}
+\subsection[NoteExpress]{NoteExpress}
+\begin{frame}[fragile]{文献管理软件}{NoteExpress}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 中文文献管理软件\link{http://www.inoteexpress.com/aegean/}
+      \begin{itemize}
+      \item 收集文献条目\footnote[frame, 2]{请查阅NoteExpress使用手册
+          及相关教程。}
+      \item 导出Bib\TeX 格式文献数据库：\menu{文件>导出题录}
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \includegraphics[width=0.7\textwidth]{06noteexpress01}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{文献管理软件}{NoteExpress}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item 导出题录
+      \begin{itemize}
+      \item 设置导出格式
+        \begin{itemize}
+        \item UTF-8
+        \item Bib\TeX
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.48\textheight]{06noteexpress02}
+      \includegraphics[height=0.48\textheight]{06noteexpress03}
+      %\includegraphics[height=0.45\textheight]{06noteexpress04}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{文献管理软件}{NoteExpress}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item 导出题录
+      \begin{itemize}
+      \item 更改文件后缀名为\enquote{.bib}
+      \item 根据需要对导出为bib数据库文件进行编辑
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \includegraphics[width=0.75\textwidth]{06noteexpress05}
+    \end{center}
+  \end{spacing}
+\end{frame}
+\subsection[EndNote]{EndNote}
+\begin{frame}[fragile]{文献管理软件}{EndNote}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 中文文献管理软件\link{http://www.inoteexpress.com/aegean/}
+      \begin{itemize}
+      \item 收集文献条目\footnote[frame, 2]{请查阅NoteExpress使用手册
+          及相关教程。}
+      \item 导出Bib\TeX 格式文献数据库：\menu{文件>导出题录}
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \includegraphics[width=0.7\textwidth]{06noteexpress01}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{文献管理软件}{EndNote}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item 导出题录
+      \begin{itemize}
+      \item 设置导出格式
+        \begin{itemize}
+        \item UTF-8
+        \item Bib\TeX
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.48\textheight]{06noteexpress02}
+      \includegraphics[height=0.48\textheight]{06noteexpress03}
+      %\includegraphics[height=0.45\textheight]{06noteexpress04}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{文献管理软件}{EndNote}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item 导出题录
+      \begin{itemize}
+      \item 更改文件后缀名为\enquote{.bib}
+      \item 根据需要对导出为bib数据库文件进行编辑
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \includegraphics[width=0.75\textwidth]{06noteexpress05}
+    \end{center}
+  \end{spacing}
+\end{frame}
 % \section[文献数据库切片]{文献数据库切片}
 % \subsection[手动摘录]{手动摘录}
 % \subsection[自动生成]{自动生成}
