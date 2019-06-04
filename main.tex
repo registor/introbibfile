@@ -116,6 +116,35 @@
   \end{spacing}  
 \end{frame}
 
+\begin{frame}[fragile]{手动生成}{嵌入\LaTeX 源文件}
+  \begin{spacing}{1.3}
+    \begin{itemize}
+    \item 随\LaTeX 源文件生成文献数据库bib文件
+      \begin{itemize}
+      \item 需要\texinline{\usepackage{filecontents}}宏包
+      \item 使用\texinline{filecontents}环境在导言区实现
+      \item 条目及条目域数据格式相同
+      \item 编译后生成文献数据库bib文件
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \begin{minipage}[h]{0.55\linewidth}
+        \begin{textcb}{随\LaTeX 源文件生成bib文件}
+          \usepackage{filecontents}
+          
+          \begin{filecontents}{example.bib}
+            @Article{傅刚2000--,
+              Title = {大风沙过后的思考},
+              Author = {傅刚 and 赵承 and 李佳路},
+              Date = {2000-04-12},
+              Journaltitle = {北京青年报}
+            }
+        \end{textcb}
+      \end{minipage}
+    \end{center}
+  \end{spacing}  
+\end{frame}
+
 \begin{frame}[fragile]{手动生成}{使用JabRef编辑}
   \begin{spacing}{1.5}
     \begin{itemize}
@@ -212,6 +241,38 @@
   \end{spacing}
 \end{frame}
 
+\begin{frame}[fragile]{手动生成}{注意事项}
+  \begin{spacing}{1.3}
+    \begin{itemize}
+    \item 特殊字符处理
+      \begin{itemize}
+      \item 对bib中的特殊字符需要使用命令替换
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \scriptsize
+      \begin{tabular}[h]{|c|c|}        
+        \hline
+        字符 & 命令 \\ \hline
+        \# & \texinline[fontsize=\scriptsize]{\#} \\ \hline
+        \$ & \texinline[fontsize=\scriptsize]{\$} \\ \hline
+        \% & \texinline[fontsize=\scriptsize]{\%} \\ \hline
+        \& & \texinline[fontsize=\scriptsize]{\&} \\ \hline
+        \_ & \texinline[fontsize=\scriptsize]{\_} \\ \hline
+        \{ & \textbackslash\{ \\ \hline
+        \} & \textbackslash\} \\ \hline
+        \~{} & \texinline[fontsize=\scriptsize]{\~{}} \\ \hline
+        \^{} & \texinline[fontsize=\scriptsize]{\^{}} \\ \hline
+        $\backslash$ & \texinline[fontsize=\scriptsize]{$\backslash$} \\ \hline   
+      \end{tabular}
+    \end{center}
+  \end{spacing}  
+\end{frame}
+
+\begin{frame}[standout,plain]
+  太麻烦？\\
+  试试文献管理软件...
+\end{frame}
 \section[文献管理软件]{文献管理软件}
 \subsection[Zotero]{Zotero}
 \begin{frame}[fragile]{文献管理软件}{Zotero}
@@ -416,8 +477,8 @@
 \end{frame}
 
 \begin{frame}[standout,plain]
-  哈，其它软件！
-  举一反三...
+  其它软件！\\
+  哈，举一反三...
 \end{frame}
 \section[文献数据库切片]{文献数据库切片}
 \begin{frame}[fragile]{文献数据库切片}{Biber程序}
@@ -445,7 +506,6 @@
 \end{frame}
 
 \begin{frame}[standout,plain]
-  \centering
   感谢聆听！\\
   欢迎多提宝贵意见和建议
 \end{frame}
