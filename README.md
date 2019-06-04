@@ -1,9 +1,13 @@
-# createbibfile
+# introbibfile
 
 #### 介绍
-LaTeX参考文献数据文件(*.bib)的常见创建和管理方式。
+LaTeX参考文献数据库文件(*.bib)的常见创建和管理方式。
 
 Happy LaTeXing！~
+
+## PDF 下载：
+
+- [introbibfile-vx.x.x.pdf](https://github.com/registor/introbibfile/releases)
 
 ## 字体下载
 
