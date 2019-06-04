@@ -278,8 +278,8 @@
       \end{itemize}
     \end{itemize}    
     \begin{center}
-      \includegraphics[width=0.53\textwidth]{05zoterocnki04}\\%\quad
-      \includegraphics[width=0.53\textwidth]{05zoterocnki05}
+      \includegraphics[width=0.49\textwidth]{05zoterocnki04}\\%\quad
+      \includegraphics[width=0.49\textwidth]{05zoterocnki05}
     \end{center}
   \end{spacing}
 \end{frame}
@@ -369,15 +369,15 @@
 \begin{frame}[fragile]{文献管理软件}{EndNote}
   \begin{spacing}{1.5}
     \begin{itemize}
-    \item 中文文献管理软件\link{http://www.inoteexpress.com/aegean/}
+    \item 经典文献管理软件\link{https://endnote.com/}
       \begin{itemize}
-      \item 收集文献条目\footnote[frame, 2]{请查阅NoteExpress使用手册
+      \item 收集文献条目\footnote[frame, 2]{请查阅EndNote使用手册
           及相关教程。}
-      \item 导出Bib\TeX 格式文献数据库：\menu{文件>导出题录}
+      \item 导出Bib\TeX 格式文献数据库：\menu{File>Export...}
       \end{itemize}
     \end{itemize}    
     \begin{center}
-      \includegraphics[width=0.7\textwidth]{06noteexpress01}
+      \includegraphics[width=0.75\textwidth]{07endnote04}
     \end{center}
   \end{spacing}
 \end{frame}
@@ -389,15 +389,13 @@
       \begin{itemize}
       \item 设置导出格式
         \begin{itemize}
-        \item UTF-8
-        \item Bib\TeX
+        \item Bib\TeX\ Export
         \end{itemize}
       \end{itemize}
     \end{itemize}
     \begin{center}
-      \includegraphics[height=0.48\textheight]{06noteexpress02}
-      \includegraphics[height=0.48\textheight]{06noteexpress03}
-      %\includegraphics[height=0.45\textheight]{06noteexpress04}
+      \includegraphics[height=0.6\textheight]{07endnote05}\quad
+      \includegraphics[height=0.6\textheight]{07endnote06}
     \end{center}
   \end{spacing}
 \end{frame}
@@ -412,17 +410,42 @@
       \end{itemize}
     \end{itemize}    
     \begin{center}
-      \includegraphics[width=0.75\textwidth]{06noteexpress05}
+      \includegraphics[width=0.6\textwidth]{07endnote08}
     \end{center}
   \end{spacing}
 \end{frame}
-% \section[文献数据库切片]{文献数据库切片}
-% \subsection[手动摘录]{手动摘录}
-% \subsection[自动生成]{自动生成}
 
-% \begin{frame}[standout,plain]
-%   ...
-% \end{frame}
+\begin{frame}[standout,plain]
+  哈，其它软件！
+  举一反三...
+\end{frame}
+\section[文献数据库切片]{文献数据库切片}
+\begin{frame}[fragile]{文献数据库切片}{Biber程序}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 提取部分文献数据(切片)
+      \begin{itemize}
+      \item 大数据库$\Rightarrow$小数据库
+      \item 仅适用于Bib\LaTeX 格式
+      \item 需要用\LaTeX 编译后生成\enquote{jobname.bcf}文件
+      \item 使用Biber程序处理\enquote{jobname.bcf}文件
+      \end{itemize}
+    \end{itemize}    
+    \begin{center}
+      \begin{minipage}[h]{0.55\linewidth}
+        \begin{textcb}{提取bib数据库切片命令}
+          biber --output-format=bibtex jobname.bcf
+        \end{textcb}
+      \end{minipage}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[standout,plain]
+  \centering
+  感谢聆听！\\
+  欢迎多提宝贵意见和建议
+\end{frame}
 
 \end{document}
 
