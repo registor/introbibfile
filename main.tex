@@ -269,6 +269,34 @@
   \end{spacing}  
 \end{frame}
 
+\begin{frame}[fragile]{手动生成}{注意事项}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item 责任者(author/editor)域数据的录入\footnote[frame,2]{参见胡振
+        震开发的\enquote{符合 GB/T 7714-2015 标准的 biblatex 参考文献
+          样式}宏包\link{https://github.com/hushidong/biblatex-gb7714-2015}}
+      \begin{itemize}
+      \item 姓名之间用\texinline{and}连接，省略用\texinline{others}
+      \item 中文作者直接录入\\
+        {\tiny 如：}\enquote{\texinline[fontsize=\tiny]{于潇 and 刘义 and 柴跃廷 and others}}
+      \item 英文作者
+        \begin{itemize}
+        \item \texinline{prefix lastname, suffix, firstname middlename}
+        \item \texinline{firstname middlename lastname}
+        \item \texinline{firstname prefix lastname}
+        \end{itemize}
+        {\tiny 如：}\enquote{\texinline[fontsize=\tiny]{DES MARAIS, Jr., D J and H STRAUSS and SUMMONS, R. E. and others}}\\
+        {\tiny 其中：第1个是\enquote{前缀,姓,后缀,名\ 中间名}；第2个是\enquote{名\ 姓}；第3个是\enquote{姓,名\ 中间名}。}\\
+        {\tiny \alert{推荐}使用第1种方式，并且各组成部分首字母最好大写。}
+      \item 中文机构名直接输入\\
+        {\tiny 如：}\enquote{\texinline[fontsize=\tiny]{中国企业投资协会 and 台湾并购与私募股权协会 and 汇盈国际投资集团}}
+      \item 英文机构名可能存在空格或and等字符串，最好用\enquote{\{\}}包围\\
+        {\tiny 如：}\enquote{\texinline[fontsize=\tiny]{{International Federation of Library Association and Institutions} and NASA}}
+      \end{itemize}
+    \end{itemize}    
+  \end{spacing}  
+\end{frame}
+
 \begin{frame}[standout,plain]
   太麻烦？\\
   试试文献管理软件...
@@ -352,7 +380,10 @@
       \begin{itemize}
       \item 选中需要导出的文库条目
       \item 右击选中的条目选择\menu{导出条目......}
-      \item 选择指定的bib数据库文件格式导出为bib数据库文件
+      \item 选择指定的bib数据库文件格式导出为bib数据库文
+        件\footnote[frame,2]{Zotero能够较为合理的处理\enquote{\&}等特
+          殊字符。} \footnote[frame,3]{better
+          BibLaTeX是Zotero的插件，用于生成更为合理的文件数据。}
       \end{itemize}
     \end{itemize}    
     \begin{center}
@@ -418,11 +449,13 @@
     \item 导出题录
       \begin{itemize}
       \item 更改文件后缀名为\enquote{.bib}
-      \item 根据需要对导出为bib数据库文件进行编辑
+      \item 根据需要对导出为bib数据库文件进行编辑\footnote[frame,2]{可
+          能需要处理\enquote{\&}等特殊字符、责任者名称中存在
+          \enquote{空格或and}时需要分组等问题。}
       \end{itemize}
     \end{itemize}    
     \begin{center}
-      \includegraphics[width=0.75\textwidth]{06noteexpress05}
+      \includegraphics[width=0.7\textwidth]{06noteexpress05}
     \end{center}
   \end{spacing}
 \end{frame}
@@ -467,11 +500,13 @@
     \item 导出题录
       \begin{itemize}
       \item 更改文件后缀名为\enquote{.bib}
-      \item 根据需要对导出为bib数据库文件进行编辑
+      \item 根据需要对导出为bib数据库文件进行编辑\footnote[frame,2]{可
+          能需要处理\enquote{\&}等特殊字符、责任者名称中存在
+          \enquote{空格或and}时需要分组等问题。}
       \end{itemize}
     \end{itemize}    
     \begin{center}
-      \includegraphics[width=0.6\textwidth]{07endnote08}
+      \includegraphics[width=0.55\textwidth]{07endnote08}
     \end{center}
   \end{spacing}
 \end{frame}
